@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AddEmpPayroll"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_add_emp_payroll">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/empname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_name"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/empdob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_dob"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.v7.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vehicleAvailable"
+                android:text = "@string/prompt_vehicle"/>
+            <LinearLayout android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/vehicleTypeView"
+                android:layout_height="wrap_content">
+            <RadioGroup
+                android:id="@+id/vehicleTypeRadioGroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/carSelected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Car"
+                    android:checked="true"
+                    android:textSize="18sp"/>
+
+                <RadioButton
+                    android:id="@+id/bikeSelected"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MotorCycle"
+                    android:textSize="18sp"/>
+            </RadioGroup>
+            <include layout="@layout/content_vehicle_detail" />
+            </LinearLayout>
+    <TextView
+        android:layout_marginTop="8dp"
+        android:text="@string/employee_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+            <RadioGroup
+                android:layout_marginTop="8dp"
+                android:id="@+id/empType"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:checked="true"
+                    android:id="@+id/partTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/part_time"
+                    android:textSize="18sp"/>
+
+                <RadioButton
+                    android:id="@+id/intern"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/intern"
+                    android:textSize="18sp"/>
+                <RadioButton
+                    android:id="@+id/fullTime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/full_time"
+                    android:textSize="18sp"/>
+            </RadioGroup>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/schoolNameView"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/schoolName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter School Name"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </android.support.design.widget.TextInputLayout>
+            <include layout="@layout/content_full_time_emp" />
+            <include layout="@layout/content_parttime_emp" />
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/submit"
+                android:onClick="savePayroll"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/submit"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+    </LinearLayout>
